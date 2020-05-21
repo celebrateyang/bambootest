@@ -15,13 +15,14 @@
 
     </security:http>
     <security:authentication-manager>
-        <!-- <security:authentication-provider user-service-ref="userDetailsServiceImpl">-->
-        <security:authentication-provider>
+         <security:authentication-provider user-service-ref="userDetailsServiceImpl"/>
+        <!--<security:authentication-provider>
         <security:user-service>
             <security:user name="user" password="user" authorities="ROLE_USER"/>
             <security:user name="admin" password="admin" authorities="ROLE_ADMIN"/>
         </security:user-service>
-        <!-- <security:jdbc-user-service data-source-ref="mysqlSource" users-by-username-query="SELECT * FROM USERS WHERE USERNAME=?"/>-->
-    </security:authentication-provider>
+        &lt;!&ndash; <security:jdbc-user-service data-source-ref="mysqlSource" users-by-username-query="SELECT * FROM USERS WHERE USERNAME=?"/>&ndash;&gt;
+    </security:authentication-provider>-->
 </security:authentication-manager>
+    <bean id="userDetailsServiceImpl" class="com.bamboo.service.UserDetailsServiceImpl"/>
 </beans>

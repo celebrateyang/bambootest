@@ -5,5 +5,6 @@
 </head>
 <body>
 index jsp
+<a href="/logout">登出</a>
 </body>
 </html>
