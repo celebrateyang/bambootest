@@ -27,7 +27,7 @@ public class MyProvider implements AuthenticationProvider {
         Object details = authentication.getDetails();
         List<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
         authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-        authorities.add(new SimpleGrantedAuthority("ROLE_PRODUCT"));
+        /*authorities.add(new SimpleGrantedAuthority("ROLE_PRODUCT"));*/
         return new UsernamePasswordAuthenticationToken(username, "", authorities);
     }
 
