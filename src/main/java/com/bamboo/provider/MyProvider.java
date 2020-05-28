@@ -3,6 +3,7 @@ package com.bamboo.provider;/**
  */
 
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -28,6 +29,9 @@ public class MyProvider implements AuthenticationProvider {
         List<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
         authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
         /*authorities.add(new SimpleGrantedAuthority("ROLE_PRODUCT"));*/
+        if("user1".equals(username)){
+            throw new BadCredentialsException("Bad credentials");
+        }
         return new UsernamePasswordAuthenticationToken(username, "", authorities);
     }
 

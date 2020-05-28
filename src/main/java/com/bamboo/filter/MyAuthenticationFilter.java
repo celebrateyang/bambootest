@@ -2,6 +2,7 @@ package com.bamboo.filter;/**
  * Created by zhuqyang on 2020/5/22.
  */
 
+import com.bamboo.Handler.MyFailureHandler;
 import com.bamboo.Handler.MySuccessHandler;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -33,6 +34,8 @@ public class MyAuthenticationFilter extends UsernamePasswordAuthenticationFilter
         this.setRequiresAuthenticationRequestMatcher(requiresAuthenticationRequestMatcher);
         MySuccessHandler mySuccessHandler = new MySuccessHandler();
         this.setAuthenticationSuccessHandler(mySuccessHandler);
+        MyFailureHandler myFailureHandler = new MyFailureHandler();
+        this.setAuthenticationFailureHandler(myFailureHandler);
        // super((new AntPathRequestMatcher("/processLogin", "POST")));
 //        super.setFilterProcessesUrl("/processLogin");
        /* this.setAuthenticationSuccessHandler(new ForwardAuthenticationSuccessHandler("/product"));*/
