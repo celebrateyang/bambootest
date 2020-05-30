@@ -13,6 +13,6 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationFa
  */
 public class MyFailureHandler extends SimpleUrlAuthenticationFailureHandler {
     public MyFailureHandler(){
-        this.setDefaultFailureUrl("https://www.sohu.com");
+        this.setDefaultFailureUrl("/login");
     }
 }
