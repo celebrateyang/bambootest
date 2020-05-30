@@ -11,6 +11,7 @@
                              always-use-default-target="true"
                              authentication-success-forward-url="/home"
                              login-processing-url="/processLogin"
+
         />
         <security:custom-filter ref="myAuthenticationFilter" before="FORM_LOGIN_FILTER"/>
         <security:csrf disabled="true"/>

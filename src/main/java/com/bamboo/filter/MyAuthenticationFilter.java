@@ -5,6 +5,7 @@ package com.bamboo.filter;/**
 import com.bamboo.Handler.MyFailureHandler;
 import com.bamboo.Handler.MySuccessHandler;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -51,7 +52,9 @@ public class MyAuthenticationFilter extends UsernamePasswordAuthenticationFilter
         authRequest.setDetails("detailsss");
         // Allow subclasses to set the "details" property
         setDetails(request, authRequest);
-
+        if("user2".equals(username)) {
+            throw new BadCredentialsException("Bad credentials");
+        }
         return super.getAuthenticationManager().authenticate(authRequest);
     }
 

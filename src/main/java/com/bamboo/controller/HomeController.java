@@ -21,5 +21,9 @@ public class HomeController {
         return "product";
     }
 
+    @RequestMapping(value = "processLogin",method = {RequestMethod.POST,RequestMethod.GET})
+    public String pressLogin(){
+        return "process";
+    }
 
 }
