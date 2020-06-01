@@ -12,6 +12,8 @@
 </head>
 <body>
 权限不足
-<a href="/home">返回首页</a>
+<a href="/home">返回首页</a><br>
+${errormessage}
+==============
 </body>
 </html>

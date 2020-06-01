@@ -15,7 +15,7 @@
         />
         <security:custom-filter ref="myAuthenticationFilter" before="FORM_LOGIN_FILTER"/>
         <security:csrf disabled="true"/>
-
+        <!--<security:access-denied-handler error-page="/403.jsp"/>-->
     </security:http>
     <security:authentication-manager alias="authenticationManager">
        <!-- <security:authentication-provider user-service-ref="userDetailsServiceImpl"/>

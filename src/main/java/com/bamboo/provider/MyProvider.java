@@ -32,6 +32,9 @@ public class MyProvider implements AuthenticationProvider {
         if("user1".equals(username)){
             throw new BadCredentialsException("Bad credentials");
         }
+        if("user3".equals(username)){
+            authorities.add(new SimpleGrantedAuthority("ROLE_PRODUCT"));
+        }
         return new UsernamePasswordAuthenticationToken(username, "", authorities);
     }
 
