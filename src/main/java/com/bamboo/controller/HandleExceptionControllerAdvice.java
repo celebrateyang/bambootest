@@ -29,7 +29,7 @@ public class HandleExceptionControllerAdvice {
 
     @ExceptionHandler(AccessDeniedException.class)
     public String handleAccessDenied(Exception e, Model model){
-        model.addAttribute("errormessage","advice");
+        model.addAttribute("errormessage",e.getMessage());
         return "403";
     }
 
